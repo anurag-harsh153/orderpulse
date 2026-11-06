@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: orderpulse-postgres
+    environment:
+      POSTGRES_DB: orderpulse
+      POSTGRES_USER: orderpulse
+      POSTGRES_PASSWORD: orderpulse
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
